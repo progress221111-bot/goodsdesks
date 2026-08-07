@@ -1,0 +1,21 @@
+---
+import { categoryById } from '../data/site';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  type: string;
+  published: Date;
+}
+const { id, title, description, category, type, published } = Astro.props;
+const cat = categoryById(category);
+const typeLabel = { guide: 'Guide', roundup: 'Comparison', review: 'Review' }[type] ?? type;
+const date = published.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<li>
+  <p class="card__meta">{cat?.name ?? category} · {typeLabel} · {date}</p>
+  <h2 class="card__title"><a href={`/articles/${id}/`}>{title}</a></h2>
+  <p class="card__desc">{description}</p>
+</li>

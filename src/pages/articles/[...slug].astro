@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Disclosure from '../../components/Disclosure.astro';
+import { categoryById } from '../../data/site';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  return articles.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const cat = categoryById(entry.data.category);
+const typeLabel =
+  { guide: 'Guide', roundup: 'Comparison', review: 'Review' }[entry.data.type] ?? entry.data.type;
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+// 比較・レビュー記事だけ本文冒頭にも開示を出す（アフィリリンクを含むため）
+const hasLinks = entry.data.type !== 'guide';
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <article class="wrap" style="padding-top:3rem">
+    <p class="article-meta">
+      <a href={`/${entry.data.category}/`}>{cat?.name ?? entry.data.category}</a> · {typeLabel} ·
+      Published {fmt(entry.data.published)}
+      {entry.data.updated && <> · Updated {fmt(entry.data.updated)}</>}
+    </p>
+    <h1>{entry.data.title}</h1>
+    <p class="lede">{entry.data.description}</p>
+
+    {hasLinks && <Disclosure />}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>

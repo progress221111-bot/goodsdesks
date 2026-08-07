@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Contact" description="How to reach Goods Desk.">
+  <div class="wrap" style="padding-top:3rem">
+    <h1>Contact</h1>
+    <p class="lede">
+      Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. We read everything,
+      and we answer most things within a few days.
+    </p>
+
+    <h2>Useful things to send us</h2>
+    <ul>
+      <li><strong>Corrections.</strong> A price, spec or link that is wrong or out of date.</li>
+      <li><strong>Requests.</strong> A category you want compared. We keep a list.</li>
+      <li>
+        <strong>Your own experience.</strong> If something we recommended failed after six months,
+        that is genuinely useful and we would like to hear it.
+      </li>
+    </ul>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>Paid placements, sponsored posts, or "add our product to your list" requests.</li>
+      <li>Guest posts and link exchanges.</li>
+    </ul>
+  </div>
+</Base>

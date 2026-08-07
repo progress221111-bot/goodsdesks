@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base
+  title="Affiliate Disclosure"
+  description="How Goods Desk earns money, and what that does and does not affect."
+>
+  <div class="wrap" style="padding-top:3rem">
+    <h1>Affiliate Disclosure</h1>
+    <p class="lede">{SITE.disclosureShort}</p>
+
+    <h2>What this means</h2>
+    <p>
+      Some links on this site are affiliate links. If you click one and buy something, the
+      retailer pays us a small commission. The price you pay is exactly the same either way, and
+      the commission comes out of the retailer's margin, not your pocket.
+    </p>
+
+    <h2>Amazon Associates</h2>
+    <p>{SITE.amazonDisclosure}</p>
+
+    <h2>What it does not affect</h2>
+    <ul>
+      <li>Which products we recommend, and in what order.</li>
+      <li>What we say about a product's weaknesses.</li>
+      <li>Whether we tell you that the cheaper option is good enough.</li>
+    </ul>
+    <p>
+      We do not accept payment from manufacturers or brands in exchange for coverage, a
+      recommendation, or a particular ranking. We do not publish sponsored posts written by
+      someone else.
+    </p>
+
+    <h2>Prices and availability</h2>
+    <p>
+      Prices and availability shown on this site are accurate as of the time of publication or
+      last update, and are subject to change. The price shown at the retailer at the time of
+      purchase is the one that applies.
+    </p>
+
+    <h2>Questions</h2>
+    <p>
+      Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> if anything here is
+      unclear.
+    </p>
+  </div>
+</Base>

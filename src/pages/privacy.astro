@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="Privacy Policy" description="What Goods Desk collects, and what it does not.">
+  <div class="wrap" style="padding-top:3rem">
+    <h1>Privacy Policy</h1>
+    <p class="lede">Last updated: <time datetime="2026-08-06">August 6, 2026</time></p>
+
+    <h2>Information we collect</h2>
+    <p>
+      We do not ask you to create an account, and we do not collect names, addresses or payment
+      details. If you email us, we keep that email so we can reply to it.
+    </p>
+
+    <h2>Analytics</h2>
+    <p>
+      We use privacy-focused analytics to count page views and see which articles are read. This
+      records aggregate information such as page URL, referring site, approximate country, and
+      device type. It does not build a profile of you across other websites.
+    </p>
+
+    <h2>Affiliate links and cookies</h2>
+    <p>
+      When you click an affiliate link, the retailer — for example Amazon — may set a cookie in
+      your browser so it can attribute a resulting purchase to this site. That cookie is set by
+      the retailer under its own privacy policy, not by us, and we never see your order details,
+      payment information, or identity. We only see aggregate totals of clicks and sales.
+    </p>
+    <p>
+      You can block or delete these cookies in your browser settings at any time. Doing so does
+      not change the price you pay or your ability to use this site.
+    </p>
+
+    <h2>Third parties</h2>
+    <p>
+      This site is hosted by a third-party hosting provider, which processes standard server
+      logs, including IP addresses, for security and reliability purposes. We do not sell or
+      share personal information with advertisers or data brokers.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      Depending on where you live, you may have the right to request access to, correction of, or
+      deletion of personal information we hold about you. Because we hold almost none, this
+      usually means email correspondence. Write to
+      <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> and we will respond.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      This site is intended for adults and is not directed at children under 13. We do not
+      knowingly collect information from children.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this policy changes, we will update the date at the top of this page.
+    </p>
+  </div>
+</Base>

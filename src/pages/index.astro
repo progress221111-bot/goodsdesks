@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { SITE, activeCategories } from '../data/site';
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+const cats = activeCategories();
+---
+
+<Base>
+  <div class="wrap">
+    <section style="padding-top:3rem">
+      <h1>{SITE.tagline}</h1>
+      <p class="lede">{SITE.description}</p>
+    </section>
+
+    <section>
+      <h2>Browse by room</h2>
+      <ul class="cat-grid">
+        {cats.map((c) => (
+          <li class="cat-card">
+            <h3><a href={`/${c.id}/`}>{c.name}</a></h3>
+            <p>{c.blurb}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Latest</h2>
+      {articles.length === 0 ? (
+        <p class="card__desc">Nothing published yet.</p>
+      ) : (
+        <ul class="card-list">
+          {articles.slice(0, 12).map((a) => (
+            <ArticleCard
+              id={a.id}
+              title={a.data.title}
+              description={a.data.description}
+              category={a.data.category}
+              type={a.data.type}
+              published={a.data.published}
+            />
+          ))}
+        </ul>
+      )}
+    </section>
+  </div>
+</Base>

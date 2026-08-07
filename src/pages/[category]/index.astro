@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { CATEGORIES } from '../../data/site';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((c) => ({ params: { category: c.id }, props: { cat: c } }));
+}
+
+const { cat } = Astro.props;
+const articles = (
+  await getCollection('articles', ({ data }) => !data.draft && data.category === cat.id)
+).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+
+<Base title={cat.name} description={cat.blurb}>
+  <div class="wrap" style="padding-top:3rem">
+    <h1>{cat.name}</h1>
+    <p class="lede">{cat.blurb}</p>
+
+    {articles.length === 0 ? (
+      <p class="card__desc">We're still working on this section.</p>
+    ) : (
+      <ul class="card-list">
+        {articles.map((a) => (
+          <ArticleCard
+            id={a.id}
+            title={a.data.title}
+            description={a.data.description}
+            category={a.data.category}
+            type={a.data.type}
+            published={a.data.published}
+          />
+        ))}
+      </ul>
+    )}
+  </div>
+</Base>

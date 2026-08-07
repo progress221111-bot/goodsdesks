@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { SITE, activeCategories } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+const pageDesc = description ?? SITE.description;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
+const cats = activeCategories();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap-wide site-head__inner">
+        <a class="brand" href="/">Goods<span>Desk</span></a>
+        <nav class="nav">
+          {cats.map((c) => <a href={`/${c.id}/`}>{c.name}</a>)}
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap-wide">
+        <div class="foot-links">
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/affiliate-disclosure/">Affiliate Disclosure</a>
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
+        <p>{SITE.disclosureShort} {SITE.amazonDisclosure}</p>
+        <p>© {new Date().getFullYear()} {SITE.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>

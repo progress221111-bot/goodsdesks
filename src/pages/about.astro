@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title="About" description="How Goods Desk researches and compares products.">
+  <div class="wrap" style="padding-top:3rem">
+    <h1>About Goods Desk</h1>
+    <p class="lede">
+      We compare everyday products and explain which one fits which situation — and, just as
+      often, when you don't need to buy anything at all.
+    </p>
+
+    <h2>How we work</h2>
+    <p>
+      Goods Desk is a small editorial project. For every comparison we start from a specific
+      household problem, then narrow the field using the things you can actually verify before
+      buying: published specifications, materials and dimensions, warranty terms, price history,
+      and the pattern of complaints that shows up across large numbers of verified customer
+      reviews.
+    </p>
+    <p>
+      We are explicit about the limits of that method. Unless a page says otherwise, our
+      recommendations are based on research and comparison rather than long-term hands-on
+      testing. When we haven't used something ourselves, we say so instead of inventing an
+      experience. If we can't find enough reliable information to separate two products, we say
+      that too.
+    </p>
+
+    <h2>How we choose what to cover</h2>
+    <p>
+      We write about categories where the choice is genuinely confusing: dozens of near-identical
+      listings, unclear sizing, or specifications that don't map to how the thing gets used at
+      home. Categories where one obvious option wins are not worth an article, so we skip them.
+    </p>
+
+    <h2>How we pay for it</h2>
+    <p>
+      {SITE.disclosureShort} {SITE.amazonDisclosure} Commissions never change which product we
+      recommend, and we don't accept payment from manufacturers in exchange for coverage or
+      placement. Full details are on our
+      <a href="/affiliate-disclosure/">affiliate disclosure</a> page.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      Prices, specifications and availability change constantly. If something on this site is
+      wrong or out of date, tell us at <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
+      and we'll correct it.
+    </p>
+  </div>
+</Base>
