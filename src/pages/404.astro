@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { activeCategories } from '../data/site';
+const cats = activeCategories();
+---
+
+<Base title="Page not found" description="That page doesn't exist.">
+  <div class="wrap" style="padding-top:4rem">
+    <h1>That page doesn't exist</h1>
+    <p class="lede">
+      The link may be old, or we may have moved something. Here's where to go instead.
+    </p>
+    <ul class="cat-grid">
+      {cats.map((c) => (
+        <li class="cat-card">
+          <h3><a href={`/${c.id}/`}>{c.name}</a></h3>
+          <p>{c.blurb}</p>
+        </li>
+      ))}
+    </ul>
+    <p><a href="/">Back to the homepage</a></p>
+  </div>
+</Base>
