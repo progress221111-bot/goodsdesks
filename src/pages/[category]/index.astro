@@ -2,10 +2,12 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
-import { CATEGORIES } from '../../data/site';
+import { activeCategories } from '../../data/site';
 
+// 記事のないカテゴリはページ自体を作らない（空ページを検索エンジンに送らないため）。
+// 記事が溜まったら site.ts の active を true にすると公開される
 export async function getStaticPaths() {
-  return CATEGORIES.map((c) => ({ params: { category: c.id }, props: { cat: c } }));
+  return activeCategories().map((c) => ({ params: { category: c.id }, props: { cat: c } }));
 }
 
 const { cat } = Astro.props;
