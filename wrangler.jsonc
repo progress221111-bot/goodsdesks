@@ -1,0 +1,11 @@
+{
+  // 静的アセットのみのWorker。`npm run build` で dist/ を作ってから
+  // `npx wrangler deploy` で公開する（GitHub連携が使えない場合の直接デプロイ用）
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "goodsdesks",
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
