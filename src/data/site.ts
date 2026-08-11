@@ -10,7 +10,8 @@ export const SITE = {
   disclosureShort:
     'Goods Desk is reader-supported. We earn commission from qualifying purchases made ' +
     'through links on this site, at no extra cost to you.',
-  amazonDisclosure: 'As an Amazon Associate we earn from qualifying purchases.',
+  // Associates Program Operating Agreement §5 が要求する文言。原文どおりに保つこと
+  amazonDisclosure: 'As an Amazon Associate I earn from qualifying purchases.',
   contactEmail: 'hello@goodsdesk.com',
 };
 
