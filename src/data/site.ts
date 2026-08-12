@@ -44,8 +44,8 @@ export const CATEGORIES: {
   {
     id: 'cleaning',
     name: 'Cleaning & Laundry',
-    blurb: 'What actually removes the stain, and what just smells like it did.',
-    active: false,
+    blurb: 'Detergents, sponges and the everyday supplies you rebuy without thinking.',
+    active: true,
   },
   {
     id: 'kids',
