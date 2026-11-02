@@ -2,14 +2,19 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Disclosure from '../../components/Disclosure.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 import { categoryById } from '../../data/site';
+import { relatedArticles } from '../../data/related';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
-  return articles.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, related: relatedArticles(entry, articles) },
+  }));
 }
 
-const { entry } = Astro.props;
+const { entry, related } = Astro.props;
 const { Content } = await render(entry);
 const cat = categoryById(entry.data.category);
 const typeLabel =
@@ -34,5 +39,23 @@ const hasLinks = entry.data.type !== 'guide';
     <div class="prose">
       <Content />
     </div>
+
+    {related.length > 0 && (
+      <section>
+        <h2>Related articles</h2>
+        <ul class="card-list">
+          {related.map((a) => (
+            <ArticleCard
+              id={a.id}
+              title={a.data.title}
+              description={a.data.description}
+              category={a.data.category}
+              type={a.data.type}
+              published={a.data.published}
+            />
+          ))}
+        </ul>
+      </section>
+    )}
   </article>
 </Base>
