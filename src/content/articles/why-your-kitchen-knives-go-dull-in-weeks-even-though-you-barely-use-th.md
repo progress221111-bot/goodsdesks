@@ -5,7 +5,6 @@ category: kitchen
 type: guide
 published: 2026-09-10
 ---
-Why Your Kitchen Knives Go Dull in Weeks Even Though You Barely Use Them
 
 A knife that spends most of its life in a block still loses its edge on a schedule, and that schedule has almost nothing to do with how often it touches a cutting board. Two numbers on a spec sheet — the steel's hardness rating and the factory edge angle — explain most of what happens to that edge between uses, and a 30-second check at the counter can tell you whether you're actually dealing with a dull knife or just a well-adjusted hand.
 

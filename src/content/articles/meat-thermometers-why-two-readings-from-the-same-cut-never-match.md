@@ -5,7 +5,8 @@ category: kitchen
 type: guide
 published: 2026-10-01
 ---
-It's a direct consequence of how heat moves through meat and how a temperature sensor actually samples it — a mechanism that placement rules alone don't address, because perfect placement doesn't produce a single "true" number. It produces a number that's accurate for one small point in a piece of food that doesn't have a uniform internal temperature at all.
+
+Two readings taken seconds apart on the same roast, both inserted correctly into the thickest part and clear of bone and fat, routinely land several degrees apart. That's not a defective probe and it's not sloppy technique. It's a direct consequence of how heat moves through meat and how a temperature sensor actually samples it — a mechanism that placement rules alone don't address, because perfect placement doesn't produce a single "true" number. It produces a number that's accurate for one small point in a piece of food that doesn't have a uniform internal temperature at all.
 
 ## Why the same cut gives different numbers
 

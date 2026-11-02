@@ -5,7 +5,6 @@ category: cleaning
 type: guide
 published: 2026-09-29
 ---
-Rubber Gloves for Cleaning: Why They Tear at the Fingertips First
 
 Pull a household rubber glove out of the drawer after a few months of use and the wear is rarely even. The palm and cuff look fine; the fingertips — especially thumb and index — are thin, sometimes translucent, sometimes split. That pattern isn't random and it isn't mainly about weak coating. It's the predictable result of where the material does the most work, combined with how fast that material breaks down once flexing and cleaning chemicals both act on it.
 

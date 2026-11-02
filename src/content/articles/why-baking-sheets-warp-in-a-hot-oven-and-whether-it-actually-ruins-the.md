@@ -5,7 +5,6 @@ category: kitchen
 type: guide
 published: 2026-10-02
 ---
-The article is already complete — it ends with a full sentence ("...which manufacturers don't disclose.") and nothing is cut off mid-word. No "Nobody publish" truncation exists in the current text. Here is the body unchanged:
 
 The loud pop a baking sheet makes partway through preheating is the sound of a thin metal plate losing a fight with uneven temperature. Aluminum and steel both expand as they heat, but a sheet pan heats unevenly — the center lags the edges, or a food-covered strip lags the bare metal next to it — so one region tries to grow faster than its neighbor. A flat sheet can't do that without bowing, and once the stress crosses a threshold, it buckles in one sharp snap instead of creeping. Whether that event, or the ten after it, actually matters depends on the pan's thickness and on what happens to the metal each time it's forced back flat — two things most warped-pan advice skips past.
 

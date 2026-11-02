@@ -5,7 +5,6 @@ category: kitchen
 type: roundup
 published: 2026-09-09
 ---
-## Can Openers That Won't Leave a Sharp Edge on the Lid
 
 A can opener that promises "no sharp edge" is making a claim about geometry — either the cutting element tracks a path that never exposes a cut face, or it doesn't. Some listings back that claim with a stated mechanism; others just print "safe" or "smooth edge" on the box. The five openers below split across both camps, plus one that skips the safety claim entirely.
 
